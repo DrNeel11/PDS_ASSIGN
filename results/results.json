@@ -1,0 +1,462 @@
+{
+  "ct_fbp": {
+    "scaling": [
+      {
+        "N": 128,
+        "angles": 128,
+        "cpu_numpy_ms": 13.001466666689035,
+        "cpu_skimage_ms": 14.375800000379968,
+        "gpu_total_ms": 0.5019599997996702,
+        "gpu_kernel_ms": 0.0169,
+        "speedup_total": 25.901399856318946,
+        "speedup_kernel": 66.24613612658104,
+        "psnr_cpu": 27.86273099002888,
+        "psnr_gpu": 27.847318170422547,
+        "max_abs_diff_cpu_gpu": 0.006273925304412842
+      },
+      {
+        "N": 256,
+        "angles": 256,
+        "cpu_numpy_ms": 93.1430000000546,
+        "cpu_skimage_ms": 108.42200000024604,
+        "gpu_total_ms": 0.6912000002341753,
+        "gpu_kernel_ms": 0.0732,
+        "speedup_total": 134.75549763960964,
+        "speedup_kernel": 303.1998697017058,
+        "psnr_cpu": 28.70939559309596,
+        "psnr_gpu": 28.705901949905446,
+        "max_abs_diff_cpu_gpu": 0.002621784806251526
+      },
+      {
+        "N": 512,
+        "angles": 512,
+        "cpu_numpy_ms": 1271.3809000001675,
+        "cpu_skimage_ms": 1386.034799999834,
+        "gpu_total_ms": 1.4025400000316672,
+        "gpu_kernel_ms": 0.4805,
+        "speedup_total": 906.4845922194459,
+        "speedup_kernel": 1782.542902465781,
+        "psnr_cpu": 31.419519313686386,
+        "psnr_gpu": 31.41804357220476,
+        "max_abs_diff_cpu_gpu": 0.001236800104379654
+      }
+    ],
+    "volume": {
+      "slices": 128,
+      "N": 256,
+      "angles": 256,
+      "cpu_ms": 11832.873199999995,
+      "gpu_filter_ms": 6.852019999860204,
+      "gpu_h2d_ms": 28.479700000160978,
+      "gpu_kernel_ms": 6.8093,
+      "gpu_d2h_ms": 2.5049,
+      "gpu_total_ms": 44.64592000002118,
+      "speedup_total": 265.0381759406992,
+      "speedup_compute": 866.1588484949536,
+      "psnr_gpu": 29.50876111499488,
+      "max_abs_diff_cpu_gpu": 0.002535369247198105,
+      "gpu_threads": 8388608
+    }
+  },
+  "mri": {
+    "cs_recon": {
+      "slices": 10,
+      "size": 256,
+      "acceleration": 4,
+      "iterations": 200,
+      "ffts_per_slice": 400,
+      "cpu_torch_ms": 670.2400499998475,
+      "gpu_ms": 95.8122199999707,
+      "speedup": 6.99535038432522,
+      "cpu_threads": 6,
+      "psnr_zero_filled": 22.799205817254865,
+      "psnr_cs_cpu": 25.64398585370963,
+      "psnr_cs_gpu": 25.643966631561625,
+      "max_abs_diff_cpu_gpu": 4.112720489501953e-06
+    },
+    "fft3d": [
+      {
+        "n": 64,
+        "numpy_ms": 9.213233333260481,
+        "torch_cpu_ms": 0.31563333353309037,
+        "cufft_ms": 0.04463999994186452,
+        "speedup_vs_numpy": 206.38963587049827,
+        "speedup_vs_torch_cpu": 7.0706392012577375
+      },
+      {
+        "n": 128,
+        "numpy_ms": 77.38740000028581,
+        "torch_cpu_ms": 1.6304333336544612,
+        "cufft_ms": 0.2459799997268419,
+        "speedup_vs_numpy": 314.6085051070155,
+        "speedup_vs_torch_cpu": 6.62831667397772
+      },
+      {
+        "n": 256,
+        "numpy_ms": 701.8821000001481,
+        "torch_cpu_ms": 22.07186666691996,
+        "cufft_ms": 2.484459999959654,
+        "speedup_vs_numpy": 282.5089154228872,
+        "speedup_vs_torch_cpu": 8.883969420831244
+      },
+      {
+        "n": 512,
+        "numpy_ms": 6409.203300000627,
+        "torch_cpu_ms": 238.29769999974815,
+        "cufft_ms": 19.456499999796506,
+        "speedup_vs_numpy": 329.41193431848797,
+        "speedup_vs_torch_cpu": 12.247716701474598
+      }
+    ]
+  },
+  "filter3d": {
+    "scaling": [
+      {
+        "n": 64,
+        "voxels": 262144,
+        "cpu_scipy_ms": 18.131533333416883,
+        "gpu_naive_ms": 0.0623,
+        "gpu_tiled_ms": 0.0396,
+        "gpu_cudnn_ms": 0.19789999992099183,
+        "h2d_ms": 0.1612,
+        "d2h_ms": 0.2305,
+        "speedup_naive": 291.03584804842507,
+        "speedup_tiled": 457.86700336911315,
+        "speedup_tiled_with_transfer": 42.03926114865959,
+        "tiled_vs_naive": 1.573232323232323,
+        "gvoxels_per_s_tiled": 6.619797979797978,
+        "psnr_noisy": 21.928262541956357,
+        "psnr_denoised": 19.066806554214683,
+        "max_abs_diff_cpu_gpu": 4.76837158203125e-07
+      },
+      {
+        "n": 128,
+        "voxels": 2097152,
+        "cpu_scipy_ms": 140.326466666617,
+        "gpu_naive_ms": 0.4743,
+        "gpu_tiled_ms": 0.3168,
+        "gpu_cudnn_ms": 1.3463999998748477,
+        "h2d_ms": 0.6606,
+        "d2h_ms": 0.7204,
+        "speedup_naive": 295.8601447746511,
+        "speedup_tiled": 442.94970538704854,
+        "speedup_tiled_with_transfer": 82.65194172848216,
+        "tiled_vs_naive": 1.4971590909090908,
+        "gvoxels_per_s_tiled": 6.619797979797978,
+        "psnr_noisy": 21.941457989330804,
+        "psnr_denoised": 21.941207938656213,
+        "max_abs_diff_cpu_gpu": 5.960464477539062e-07
+      },
+      {
+        "n": 256,
+        "voxels": 16777216,
+        "cpu_scipy_ms": 1207.4509999997645,
+        "gpu_naive_ms": 4.2087,
+        "gpu_tiled_ms": 2.3998,
+        "gpu_cudnn_ms": 10.209279999980936,
+        "h2d_ms": 5.6921,
+        "d2h_ms": 7.4134,
+        "speedup_naive": 286.894052795344,
+        "speedup_tiled": 503.14651220925265,
+        "speedup_tiled_with_transfer": 77.87343682481246,
+        "tiled_vs_naive": 1.7537711475956332,
+        "gvoxels_per_s_tiled": 6.99108925743812,
+        "psnr_noisy": 21.93991876785659,
+        "psnr_denoised": 25.285753842945024,
+        "max_abs_diff_cpu_gpu": 7.152557373046875e-07
+      }
+    ]
+  },
+  "segmentation": {
+    "dataset": {
+      "train": 2000,
+      "test": 200,
+      "size": 128
+    },
+    "params_millions": 7.765409,
+    "training": {
+      "epochs": 25,
+      "batch": 32,
+      "iters_per_epoch": 62,
+      "cpu_s_per_iter": 1.7308571500000198,
+      "gpu_amp_s_per_iter": 0.19974830593548382,
+      "cpu_epoch_s": 107.31314330000123,
+      "gpu_epoch_s": 12.384394967999997,
+      "gpu_total_train_s": 309.6098741999999,
+      "cpu_total_train_s_est": 2682.8285825000307,
+      "speedup": 8.665190635254072,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 1.3539543747901917,
+          "test_dice": 0.0378413088619709
+        },
+        {
+          "epoch": 2,
+          "loss": 1.1760152924445368,
+          "test_dice": 0.238169327378273
+        },
+        {
+          "epoch": 3,
+          "loss": 1.0206010120530282,
+          "test_dice": 0.4286419451236725
+        },
+        {
+          "epoch": 4,
+          "loss": 0.8126409024961533,
+          "test_dice": 0.5509259104728699
+        },
+        {
+          "epoch": 5,
+          "loss": 0.5579847818420779,
+          "test_dice": 0.7441837787628174
+        },
+        {
+          "epoch": 6,
+          "loss": 0.3490418883100633,
+          "test_dice": 0.8293479681015015
+        },
+        {
+          "epoch": 7,
+          "loss": 0.24562139400551397,
+          "test_dice": 0.8512808084487915
+        },
+        {
+          "epoch": 8,
+          "loss": 0.2027809655954761,
+          "test_dice": 0.8231985569000244
+        },
+        {
+          "epoch": 9,
+          "loss": 0.17219871474850562,
+          "test_dice": 0.8741804361343384
+        },
+        {
+          "epoch": 10,
+          "loss": 0.15721390973175725,
+          "test_dice": 0.8730319738388062
+        },
+        {
+          "epoch": 11,
+          "loss": 0.14423693620389508,
+          "test_dice": 0.8421218395233154
+        },
+        {
+          "epoch": 12,
+          "loss": 0.13239149184476945,
+          "test_dice": 0.8890896439552307
+        },
+        {
+          "epoch": 13,
+          "loss": 0.12174031823392838,
+          "test_dice": 0.884242832660675
+        },
+        {
+          "epoch": 14,
+          "loss": 0.11501964998822059,
+          "test_dice": 0.8934434056282043
+        },
+        {
+          "epoch": 15,
+          "loss": 0.10981311444793979,
+          "test_dice": 0.8996561169624329
+        },
+        {
+          "epoch": 16,
+          "loss": 0.10183249401950067,
+          "test_dice": 0.8967220783233643
+        },
+        {
+          "epoch": 17,
+          "loss": 0.0970774861353059,
+          "test_dice": 0.9044865369796753
+        },
+        {
+          "epoch": 18,
+          "loss": 0.09287213798492186,
+          "test_dice": 0.8910098075866699
+        },
+        {
+          "epoch": 19,
+          "loss": 0.08943104004907992,
+          "test_dice": 0.9049641489982605
+        },
+        {
+          "epoch": 20,
+          "loss": 0.08603474930409462,
+          "test_dice": 0.9070317149162292
+        },
+        {
+          "epoch": 21,
+          "loss": 0.08387474751760883,
+          "test_dice": 0.9094343185424805
+        },
+        {
+          "epoch": 22,
+          "loss": 0.08266367378734774,
+          "test_dice": 0.9054121375083923
+        },
+        {
+          "epoch": 23,
+          "loss": 0.08112609554683009,
+          "test_dice": 0.9078494310379028
+        },
+        {
+          "epoch": 24,
+          "loss": 0.0798823376817088,
+          "test_dice": 0.9078108072280884
+        },
+        {
+          "epoch": 25,
+          "loss": 0.07997138786219782,
+          "test_dice": 0.908789336681366
+        }
+      ]
+    },
+    "inference": {
+      "cpu_fp32_img_per_s": 57.17759825155536,
+      "gpu_fp32_img_per_s": 1156.5188243676155,
+      "gpu_amp_fp16_img_per_s": 2607.5789281527846,
+      "speedup_fp32": 20.226782161773567,
+      "speedup_amp": 45.60490485593022,
+      "ms_per_slice_cpu": 17.489366999999824,
+      "ms_per_slice_gpu_amp": 0.383497500000279,
+      "test_dice": 0.908789336681366
+    }
+  },
+  "render3d": {
+    "volume_shape": [
+      256,
+      226,
+      256
+    ],
+    "views": 36,
+    "mip_cpu_s": 13.773501300000135,
+    "mip_cpu_fps": 2.613714495383948,
+    "dvr_cpu_s": 16.247032299999773,
+    "dvr_cpu_fps": 2.2157892798674688,
+    "mip_gpu_s": 0.3647422000003644,
+    "mip_gpu_fps": 98.69984882463295,
+    "dvr_gpu_s": 0.5225288999999975,
+    "dvr_gpu_fps": 68.89571084010889,
+    "mip_speedup": 37.7622915582194,
+    "dvr_speedup": 31.093078870852597,
+    "max_abs_diff_dvr": 0.0019416213035583496
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5060",
+    "gpu_mem_gb": 8.0,
+    "sm_count": 30,
+    "compute_capability": "12.0",
+    "cpu": "AMD Ryzen 5 7600 6-Core Processor",
+    "cpu_threads": 12,
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0"
+  },
+  "pipeline": {
+    "stages": [
+      {
+        "stage": "CT reconstruction (128 x 256^2, FBP)",
+        "cpu_ms": 11832.873199999995,
+        "gpu_ms": 44.64592000002118,
+        "speedup": 265.0381759406992
+      },
+      {
+        "stage": "MRI CS recon (10 x 256^2, 200 iters)",
+        "cpu_ms": 670.2400499998475,
+        "gpu_ms": 95.8122199999707,
+        "speedup": 6.99535038432522
+      },
+      {
+        "stage": "3D denoise (256^3, 5^3 Gaussian)",
+        "cpu_ms": 1207.4509999997645,
+        "gpu_ms": 15.505299999999998,
+        "speedup": 77.87343682481246
+      },
+      {
+        "stage": "U-Net inference (128 slices)",
+        "cpu_ms": 2238.6389759999774,
+        "gpu_ms": 49.08768000003571,
+        "speedup": 45.60490485593022
+      },
+      {
+        "stage": "3D rendering (36 DVR views)",
+        "cpu_ms": 16247.032299999773,
+        "gpu_ms": 522.5288999999975,
+        "speedup": 31.093078870852597
+      }
+    ],
+    "total_cpu_ms": 32196.235525999356,
+    "total_gpu_ms": 727.5800200000251,
+    "speedup": 44.25112653038252
+  },
+  "threshold": {
+    "scaling": [
+      {
+        "shape": [
+          113,
+          256,
+          256
+        ],
+        "voxels": 7405568,
+        "cpu_ms": 69.20986666652122,
+        "h2d_ms": 2.1646,
+        "hist_global_ms": 1.51,
+        "hist_shared_ms": 0.0952,
+        "otsu_host_ms": 0.16970000069704838,
+        "label_ms": 0.118,
+        "d2h_ms": 0.7438,
+        "hist_match": true,
+        "hist_blocks": 240,
+        "label_blocks": 28928,
+        "gpu_compute_ms": 0.3829000006970484,
+        "gpu_total_ms": 3.2913000006970483,
+        "speedup_compute": 180.75180606040342,
+        "speedup_total": 21.02812464736232,
+        "shared_vs_global": 15.861344537815125,
+        "t1": 0.2421875,
+        "t2": 0.5859375,
+        "hist_equal_cpu_gpu": true,
+        "label_mismatch_voxels": 0,
+        "frac_background": 0.7391989378802544,
+        "frac_soft": 0.2188882743362832,
+        "frac_bone": 0.04191278778346239
+      },
+      {
+        "shape": [
+          226,
+          512,
+          512
+        ],
+        "voxels": 59244544,
+        "cpu_ms": 518.1738333333973,
+        "h2d_ms": 16.8149,
+        "hist_global_ms": 13.0649,
+        "hist_shared_ms": 0.7533,
+        "otsu_host_ms": 0.19319999955769163,
+        "label_ms": 0.8479,
+        "d2h_ms": 4.3836,
+        "hist_match": true,
+        "hist_blocks": 240,
+        "label_blocks": 231424,
+        "gpu_compute_ms": 1.7943999995576916,
+        "gpu_total_ms": 22.992899999557693,
+        "speedup_compute": 288.7727560527886,
+        "speedup_total": 22.536253945494707,
+        "shared_vs_global": 17.343555024558608,
+        "t1": 0.2421875,
+        "t2": 0.57421875,
+        "hist_equal_cpu_gpu": true,
+        "label_mismatch_voxels": 0,
+        "frac_background": 0.7398400264503682,
+        "frac_soft": 0.21695572507064953,
+        "frac_bone": 0.0432042484789823
+      }
+    ],
+    "lesion_best_threshold": {
+      "dice": 0.10911437398385668,
+      "threshold": 0.34,
+      "above": true
+    }
+  }
+}

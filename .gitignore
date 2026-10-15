@@ -1,0 +1,26 @@
+# Large/regenerable data (download + regenerate per README.md)
+data/*.npy
+data/*.bin
+data/raw/
+data/ct_sinos_*.npy
+
+# Trained model weights (regenerate via src/segmentation.py, ~5 min on GPU)
+results/unet.pt
+results/seg_log.txt
+
+# Node dependencies (npm install in presentation/)
+presentation/node_modules/
+
+# Generated grayscale image cache (rebuilt by build_deck.js)
+presentation/.bw/
+
+# Compiled CUDA kernels (rebuilt automatically by common.py via nvcc)
+src/kernels/bin/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+Thumbs.db
+.DS_Store
